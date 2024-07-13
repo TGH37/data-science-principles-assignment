@@ -25,7 +25,7 @@ order_id_map = orders_data.set_index('Order ID Processed')['Order ID'].to_dict()
 # Create a new column 'Matched_OrderID' in returns_data and populate it based on the mapping
 returns_data['Matched_OrderID'] = returns_data['Order ID Processed'].map(order_id_map)
 
-order_date_map = orders_data.set_index('Order ID')['Order Date'].to_dict()
+order_date_map = orders_data.set_index('Order ID')['Ship Date'].to_dict()
 
 returns_data = returns_data.dropna(subset=['Matched_OrderID'])
 
